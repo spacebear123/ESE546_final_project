@@ -141,7 +141,7 @@ def preprocess(img_dirs, selected_class="horse"):
                 preds = [class_names[cls_id] for cls_id in class_ids if class_names[cls_id] == selected_class]
                 print(preds)
                 if not preds:
-                    print("Warning: no %s detected in. Ignored."%selected_class, file_name)
+                    print("Warning: no %s detected in "%selected_class, file_name)
                     bad_list['no'][base_img_dir].append(file_name)
                     continue
                 pred_cnt = Counter(preds)
