@@ -20,7 +20,7 @@ From the [Releases page](https://github.com/matterport/Mask_RCNN/releases) page:
 Apply splash effect on an image:
 
 ```bash
-python3 balloon.py splash --weights=/path/to/mask_rcnn/mask_rcnn_balloon.h5 --image=<file name or URL>
+python3 balloon.py splash --weights=/home/ubuntu/ESE546_final_project/Mask_RCNN/mask_rcnn_balloon.h5 --image=/home/ubuntu/ESE546_final_project/images/2311771643_f46392fcc0_b.jpg
 ```
 
 Apply splash effect on a video. Requires OpenCV 3.2+:
