@@ -70,9 +70,7 @@ print("loading weights...")
 model = modellib.MaskRCNN(mode="inference", model_dir=MODEL_DIR, config=config)
 
 # Load weights trained on MS-COCO
-model.load_weights(COCO_MODEL_PATH, by_name=True, exclude=[
-"mrcnn_class_logits", "mrcnn_bbox_fc",
-"mrcnn_bbox", "mrcnn_mask"])
+model.load_weights(COCO_MODEL_PATH)
 
 
 # In[5]:
@@ -143,7 +141,6 @@ def preprocess(img_dirs, selected_class="horse"):
                 if not preds:
                     print("Warning: no %s detected in "%selected_class, file_name)
                     bad_list['no'][base_img_dir].append(file_name)
-                    continue
                 pred_cnt = Counter(preds)
                 mask_idxs = [idx for idx in range(masks.shape[2]) if class_names[class_ids[idx]] == selected_class]
 
