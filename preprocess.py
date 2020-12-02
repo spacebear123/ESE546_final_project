@@ -38,6 +38,7 @@ MODEL_DIR = os.path.join(ROOT_DIR, "logs")
 
 # Local path to trained weights file
 COCO_MODEL_PATH = os.path.join(ROOT_DIR, "mask_rcnn_coco.h5")
+print(COCO_MODEL_PATH)
 # Download COCO trained weights from Releases if needed
 if not os.path.exists(COCO_MODEL_PATH):
     utils.download_trained_weights(COCO_MODEL_PATH)
@@ -70,9 +71,7 @@ print("loading weights...")
 model = modellib.MaskRCNN(mode="inference", model_dir=MODEL_DIR, config=config)
 
 # Load weights trained on MS-COCO
-model.load_weights(COCO_MODEL_PATH, by_name=True, exclude=[
-"mrcnn_class_logits", "mrcnn_bbox_fc",
-"mrcnn_bbox", "mrcnn_mask"])
+model.load_weights(COCO_MODEL_PATH)
 
 
 # In[5]:
