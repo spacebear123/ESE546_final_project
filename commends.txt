@@ -374,3 +374,14 @@
   374  sudo pip3 install scipy==1.1.0
   375  python3 run.py
   376  history
+
+
+visdom 0.1.8.9 requires jsonpatch, which is not installed.
+visdom 0.1.8.9 requires pillow, which is not installed.
+visdom 0.1.8.9 requires pyzmq, which is not installed.
+visdom 0.1.8.9 requires requests, which is not installed.
+visdom 0.1.8.9 requires scipy, which is not installed.
+visdom 0.1.8.9 requires six, which is not installed.
+visdom 0.1.8.9 requires tornado, which is not installed.
+torchvision 0.8.2 requires pillow>=4.1.1, which is not installed.
+torch 1.7.1 requires typing-extensions, which is not installed.
