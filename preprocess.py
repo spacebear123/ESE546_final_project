@@ -1,7 +1,3 @@
-# coding: utf-8
-
-# In[1]:
-
 print("start")
 import pdb 
 import os
@@ -14,72 +10,42 @@ import skimage.io
 import matplotlib
 import matplotlib.pyplot as plt
 from collections import Counter, defaultdict
-import progressbar
 import traceback
-from utils import print_mask, print_mask_val
+from myUtils import print_mask, print_mask_val
 
-# Root directory of the project
+from mrcnn import utils
+import mrcnn.model as modellib
+from mrcnn import visualize
+from mrcnn import config
+
 ROOT_DIR = os.path.abspath("./Mask_RCNN/")
 
 # Import Mask RCNN
 sys.path.append(ROOT_DIR)  # To find local version of the library
-from mrcnn import utils
-import mrcnn.model as modellib
-from mrcnn import visualize
-# Import COCO config
+
 sys.path.append(os.path.join(ROOT_DIR, "samples/coco/"))  # To find local version
 import coco
 
-#get_ipython().run_line_magic('matplotlib', 'inline')
-print("import ready")
-
-# Directory to save logs and trained model
 MODEL_DIR = os.path.join(ROOT_DIR, "logs")
 
 # Local path to trained weights file
 COCO_MODEL_PATH = os.path.join(ROOT_DIR, "mask_rcnn_coco.h5")
 print(COCO_MODEL_PATH)
-# Download COCO trained weights from Releases if needed
-if not os.path.exists(COCO_MODEL_PATH):
-    utils.download_trained_weights(COCO_MODEL_PATH)
-
-# Directory of images to run detection on
 IMAGE_DIR = os.path.join(ROOT_DIR, "images")
 
-
-# In[2]:
-
-
-# In[3]:
-
-
-class InferenceConfig(coco.CocoConfig):
-    # Set batch size to 1 since we'll be running inference on
-    # one image at a time. Batch size = GPU_COUNT * IMAGES_PER_GPU
-    GPU_COUNT = 1
-    IMAGES_PER_GPU = 1
-
-config = InferenceConfig()
-config.display()
+class HorseConfig(config.Config):
+     NAME = "horse"
+     GPU_COUNT = 1
+     IMAGES_PER_GPU = 1
+     NUM_CLASSES = 1 + 80
+    
+horseConfig = HorseConfig()
+horseConfig.display()
 
 
-# In[4]:
+model = modellib.MaskRCNN(mode="inference", model_dir=COCO_MODEL_PATH, config=horseConfig)
+model.load_weights(COCO_MODEL_PATH,by_name=True)
 
-
-print("loading weights...")
-# Create model object in inference mode.
-model = modellib.MaskRCNN(mode="inference", model_dir=MODEL_DIR, config=config)
-
-# Load weights trained on MS-COCO
-model.load_weights(COCO_MODEL_PATH)
-
-
-# In[5]:
-
-
-# COCO Class names
-# Index of the class in the list is its ID. For example, to get ID of
-# the teddy bear class, use: class_names.index('teddy bear')
 class_names = ['BG', 'person', 'bicycle', 'car', 'motorcycle', 'airplane',
                'bus', 'train', 'truck', 'boat', 'traffic light',
                'fire hydrant', 'stop sign', 'parking meter', 'bench', 'bird',
@@ -113,9 +79,6 @@ ZEBRA_DIRS = [
     "cycleGan-pix2pix/datasets/horse2zebra_original/trainB",
 ]
 
-# In[10]:
-
-
 def preprocess(img_dirs, selected_class="horse"):
     bad_list = defaultdict(lambda: defaultdict(list))
     for img_dir in img_dirs:
@@ -126,9 +89,6 @@ def preprocess(img_dirs, selected_class="horse"):
         print("making", output_dir, "from", img_dir)
         sys.stdout.flush()
         files = next(os.walk(img_dir))[2]
-        bar = progressbar.ProgressBar(maxval=len(files), \
-            widgets=[progressbar.Bar('=', '[', ']'), ' ', progressbar.Percentage()])
-        bar.start()
         for f_cnt, file_name in enumerate(files):
             # (H, W, C=3)
             try:
@@ -142,6 +102,7 @@ def preprocess(img_dirs, selected_class="horse"):
                 if not preds:
                     print("Warning: no %s detected in "%selected_class, file_name)
                     bad_list['no'][base_img_dir].append(file_name)
+                    continue
                 pred_cnt = Counter(preds)
                 mask_idxs = [idx for idx in range(masks.shape[2]) if class_names[class_ids[idx]] == selected_class]
 
@@ -161,11 +122,9 @@ def preprocess(img_dirs, selected_class="horse"):
                 out_file_name = ".".join([file_name_no_ext, "npy"])
                 scipy.misc.toimage(catted, cmin=0.0, cmax=255.).save('0.png')
                 print_mask_val(catted[:,:,3])
-                bar.update(f_cnt + 1)
             except Exception as e:
                 print("Exception when handling image %s!"%file_name)
                 traceback.print_exc()
-        bar.finish()
         sys.stdout.flush()
 
     bad_list = dict(bad_list)
@@ -176,16 +135,10 @@ def preprocess(img_dirs, selected_class="horse"):
     print(bad_list)
 
 
+  
 # In[ ]:
 HORSE_DIRS = ["images"]
 
 if __name__ == "__main__":
 
     preprocess(HORSE_DIRS, "horse")
-
-
-# In[ ]:
-
-
-
-

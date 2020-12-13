@@ -1,0 +1,376 @@
+1  ls
+    2  wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+    3  chmod +x Miniconda3-latest-Linux-x86_64.sh
+    4  ./Miniconda3-latest-Linux-x86_64.sh
+    5  eval "$(/home/ubuntu/miniconda3/bin/conda shell.bash hook)"
+    6  conda init bash
+    7  conda -V
+    8  conda create --name 546_final
+    9  conda info --envs
+   10  conda activate 546_final
+   11  ls
+   12  git clone https://github.com/spacebear123/ESE546_final_project.git
+   13  ls
+   14  cd ESE546_final_project
+   15  ls
+   16  bash aws_setup.sh
+   17  ls
+   18  python preprocess.py
+   19  python
+   20  pip install tensorflow
+   21  python preprocess.py
+   22  pip install urllib.request
+   23  pip install --upgrade pip
+   24  pip install urllib
+   25  python3 preprocess.py
+   26  conda activate base
+   27  conda activate 546_final
+   28  conda deactivate
+   29  conda create -n 546_final python=3.6
+   30  conda activate 546_final
+   31  python -v
+   32  clear
+   33  ls
+   34  bash aws_setup.sh
+   35  ls
+   36  python3 preprocess.py
+   37  git pull
+   38  python3 preprocess.py
+   39  cd Mask_RCNN/mrcnn
+   40  ls
+   41  vim model.py
+   42  cd ..
+   43  git pull
+   44  git checkout
+   45  python3 preprocess.py
+   46  pip install --ignore-installed --upgrade tensorflow==1.13.1
+   47  python3 preprocess.py
+   48  pip install --ignore-installed --upgrade keras==2.1.0
+   49  python3 preprocess.py
+   50  pip install --ignore-installed --upgrade tensorflow==1.3.0
+   51  pip install --ignore-installed --upgrade keras==2.0.8
+   52  python3 preprocess.py
+   53  python
+   54  pip uninstall tensorflow tensorflow-gpu
+   55  python
+   56  pip install --ignore-installed --upgrade tensorflow==1.3.0
+   57  python
+   58  python3 preprocess.py
+   59  pip install --ignore-installed --upgrade keras==2.0.8
+   60  pip install tensorflow
+   61  python
+   62  python3 preprocess.py
+   63  pip install tensorflow==1.14 
+   64  python3 preprocess.py
+   65  python
+   66  git pull
+   67  python3 preprocess.py
+   68  conda activate base
+   69  cd Mask_RCNN/mrcnn/model.py
+   70  ls
+   71  cd Mask_RCNN/mrcnn
+   72  ls
+   73  vim model.py
+   74  conda list envs
+   75  conda activate 546_final
+   76  cd ..
+   77  cd Mask_RCNN
+   78  python3 setup.py install
+   79  cd ..
+   80  python3 preprocess.py
+   81  cd /home/ubuntu/miniconda3/envs/546_final/lib/python3.6/site-packages/tensorflow/python/keras/saving/
+   82  ls
+   83  vim hdf5_format.py
+   84  cd
+   85  ls
+   86  cd ESE546_final_project
+   87  python3 preprocess.py
+   88  cd /home/ubuntu/miniconda3/envs/546_final/lib/python3.6/site-packages/tensorflow/python/keras/saving
+   89  vim hdf5_format.py
+   90  cd
+   91  cd ESE546_final_project
+   92  python3 preprocess.py
+   93  git pull
+   94  python3 preprocess.py
+   95  git pull
+   96  python3 preprocess.py
+   97  git pull
+   98  python3 preprocess.py
+   99  git pull
+  100  python3 preprocess.py
+  101  git pull
+  102  python3 preprocess.py
+  103  vim preprocess.py
+  104  python3 preprocess.py
+  105  vim preprocess.py
+  106  python3 preprocess.py
+  107  ls
+  108  git pull
+  109  python3 preprocess.py
+  110  vim preprocess.py
+  111  python3 preprocess.py
+  112  cd cocoapi/PythonAPI
+  113  make
+  114  python setup.py
+  115  python setup.py install
+  116  cd ..
+  117  python3 preprocess.py
+  118  vim preprocess.py
+  119  python3 preprocess.py
+  120  git commit -m "from aws"
+  121  cd Mask_RCNN
+  122  python3 setup.py install
+  123  cd ..
+  124  python3 setup.py install
+  125  python3 preprocess.py
+  126  cd /home/ubuntu/miniconda3/envs/546_final/lib/python3.6/site-packages/tensorflow/python/keras/saving
+  127  vim hdf5_format.py
+  128  cd ..
+  129  cd
+  130  cd 546_final
+  131  ls
+  132  cd ESE546_final_project
+  133  python3 preprocess.py
+  134  cd /home/ubuntu/miniconda3/envs/546_final/lib/python3.6/site-packages/tensorflow/python/keras/saving
+  135  vim hdf5_format.py
+  136  cd
+  137  cd ESE546_final_project
+  138  python3 preprocess.py
+  139  ls
+  140  cd ..
+  141  ls
+  142  cd ..
+  143  ls
+  144  cd ..
+  145  ls
+  146  cd home
+  147  ls
+  148  cd ubuntu
+  149  cd ESE546_final_project
+  150  vim preprocess.py
+  151  python3 preprocess.py
+  152  cd Mask_RCNN
+  153  ls
+  154  rm mask_rcnn_coco.h5
+  155  ls
+  156  cd ..
+  157  python3 preprocess.py
+  158  vim preprocess.py
+  159  git add -A
+  160  git commit -m "from aws"
+  161  git push
+  162  vim Mask_RCNN/.gitignore
+  163  git add -A
+  164  git commit -m "from aws"
+  165  git push
+  166  vim Mask_RCNN/.gitignore
+  167  git commit -m 'from aws'
+  168  git push
+  169  ls
+  170  cd Mask_RCNN
+  171  ls
+  172  rm mask_rcnn_coco.h5
+  173  ls
+  174  git commit -m "from aws"
+  175  git stage
+  176  git stage .
+  177  git commit -m "from aws"
+  178  pwd
+  179  cd ..
+  180  python3 preprocess.py
+  181  vim preprocess.py
+  182  python3 preprocess.py
+  183  vim preprocess.py
+  184  python3 preprocess.py
+  185  ls
+  186  cd cycleGan-pix2pix
+  187  ls
+  188  cd data
+  189  ls
+  190  cd ..
+  191  ls
+  192  cd imgs
+  193  ls
+  194  cd ..
+  195  git pull
+  196  vim preprocess.py
+  197  git stash
+  198  git pull
+  199  python3 preprocess.py
+  200  vim preprocess.py
+  201  python3 preprocess.py
+  202  lw
+  203  ls
+  204  python
+  205  vim preprocess.py
+  206  python3 preprocess.py
+  207  ls
+  208  cd images
+  209  ls
+  210  cd ..
+  211  ls
+  212  cd Mask_RCNN
+  213  ls
+  214  cd samples
+  215  ls
+  216  cd balloon
+  217  python3 balloon.py splash --weights= --image=<file name or URL>
+  218  cd ..
+  219  ls
+  220  cd ..
+  221  ls
+  222  cd ..
+  223  ls
+  224  cd ..
+  225  ls
+  226  cd home
+  227  ls
+  228  cd ubuntu
+  229  ls
+  230  cd             Nvidia_Cloud_EULA.pdf  miniconda3  tools
+  231  cd ESE546_final_project
+  232  ls
+  233  cd Mask_RCNN
+  234  ls
+  235  pwd
+  236  cd ..
+  237  cd images
+  238  pwd
+  239  ls
+  240  cd ..
+  241  ls
+  242  cd Mask_RCNN
+  243  ls
+  244  cd samples
+  245  ls
+  246  cd balloon
+  247  python3 balloon.py splash --weights=/home/ubuntu/ESE546_final_project/Mask_RCNN/mask_rcnn_balloon.h5 --image=/home/ubuntu/ESE546_final_project/images/2311771643_f46392fcc0_b.jpg
+  248  ls
+  249  git push
+  250  ls
+  251  pwd
+  252  python
+  253  cd ..
+  254  git pull
+  255  ls
+  256  cd Mask_RCNN-2.0
+  257  ls
+  258  python3 demo.py
+  259  cd /home/ubuntu/miniconda3/envs/546_final/lib/python3.6/site-packages/keras/engine/
+  260  vim topology.py
+  261  cd ~/ESE546_final_project/Mask_RCNN-2.0
+  262  python3 demo.py
+  263  cd /home/ubuntu/miniconda3/envs/546_final/lib/python3.6/site-packages/keras/engine/
+  264  vim topology.py
+  265  cd ~/ESE546_final_project/Mask_RCNN-2.0
+  266  python3 demo.py
+  267  pip install --ignore-installed --upgrade scipy==1.0.0
+  268  git commit -m 'aws'
+  269  git push
+  270  pip install --ignore-installed --upgrade scipy==1.1.0
+  271  pip install --ignore-installed --upgrade bleach==1.5.0
+  272  pip install --ignore-installed --upgrade scipy==1.1.0
+  273  cd ..
+  274  ls
+  275  cd images
+  276  ls
+  277  cd ..
+  278  vim preprocess.py
+  279  python3 preprocess.py
+  280  ls
+  281  cd masked_images
+  282  ls
+  283  cd ..
+  284  vim preprocess.py
+  285  conda activate 546_Final
+  286  conda activate 546_final
+  287  python3 preprocess.py
+  288  ls
+  289  cd ESE546_final_proejct
+  290  cd ESE546_final_project
+  291  python3 preprocess.py
+  292  sudo pip install --no-deps tensorflow==1.15.3
+  293  ls
+  294  git clone https://github.com/matterport/Mask_RCNN.git
+  295  cd Mask_RCNN
+  296  python setup.py install
+  297  pip show mask-rcnn
+  298  python3
+  299  cd ~
+  300  ls
+  301  cd ESE546_final_project
+  302  ls
+  303  python3 run.py
+  304  sudo pip install --no-deps keras==2.2.4
+  305  python3
+  306  python3 run.py
+  307  vim /home/ubuntu/miniconda3/envs/546_final/lib/python3.6/site-packages/mask_rcnn-2.1-py3.6.egg/mrcnn/model.py
+  308  cd Mask_RCNN
+  309  python setup.py install
+  310  cd ..
+  311  python3 run.py
+  312  python3
+  313  conda create -y --name 1212
+  314  conda activate 1212
+  315  ls
+  316  2
+  317  sudo pip install --no-deps tensorflow==1.15.3
+  318  sudo pip install --no-deps keras==2.2.4
+  319  sudo pip3 install --no-deps keras==2.2.4
+  320  sudo pip3 install --no-deps tensorflow==1.15.3
+  321  ls
+  322  cd ESE546_final_project
+  323  ls
+  324  cd Mask_RCNN
+  325  ls
+  326  python3 setup.py install
+  327  sudo python3 setup.py install
+  328  cd ..
+  329  python3 run.py
+  330  sudo pip3 install --no-deps tensorflow==1.3.0
+  331  python3 run.py
+  332  sudo pip3 install keras_applications
+  333  python3 run.py
+  334  sudo pip3 install keras_preprocessing
+  335  python3 run.py
+  336  pip3 install imgaug
+  337  python3 run.py
+  338  git submodule --init --update cocoapi
+  339  cd cocoapi/PythonAPI
+  340  make
+  341  python setup.py install
+  342  sudo python setup.py install
+  343  cd ~
+  344  cd ESE546_final_project
+  345  python3 run.py
+  346  sudo pip3 install git+https://github.com/waleedka/cocoapi.git#egg=pycocotools&subdirectory=PythonAPI
+  347  zxiaohan@seas.upenn.edu
+  348  sudo pip3 install git+https://github.com/waleedka/cocoapi.git#egg=pycocotools&subdirectory=PythonAPI
+  349  zxiaohan@seas.upenn.edu
+  350  cd cocoapi/PythonAPI
+  351  python setup.py build_ext install
+  352  sudo python setup.py build_ext install
+  353  sudo python3 setup.py build_ext install
+  354  cd ~
+  355  ls
+  356  cd ESE546_final_project
+  357  ls
+  358  python3 run.py
+  359  sudo pip3 install --no-deps keras==2.0.8
+  360  2
+  361  python3 run.py
+  362  sudo pip3 install h5py<3.0
+  363  sudo pip3 install h5py==2.1
+  364  sudo pip3 install h5py==2.9.0
+  365  python3 run.py
+  366  sudo pip3 install scipy==1.0.0
+  367  python3 run.py
+  368  sudo pip3 install scipy==1.5.4
+  369  sudo pip3 install scipy==1.0.0
+  370  sudo3 pip3 install numpy
+  371  sudo pip3 install numpy
+  372  python3 run.py
+  373  sudo pip3 install numpy==1.18
+  374  sudo pip3 install scipy==1.1.0
+  375  python3 run.py
+  376  history

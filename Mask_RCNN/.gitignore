@@ -56,9 +56,3 @@ pip-delete-this-directory.txt
 .venv
 venv/
 ENV/
-
-annotations/
-val2014.zip
-val2014/
-ipython3.out
-.*.swp
