@@ -376,6 +376,8 @@
   376  history
 
 
+python test.py --dataroot Inputs --name horse2zebra_pretrained --model test --no_dropout
+
 visdom 0.1.8.9 requires jsonpatch, which is not installed.
 visdom 0.1.8.9 requires pillow, which is not installed.
 visdom 0.1.8.9 requires pyzmq, which is not installed.
