@@ -27,6 +27,7 @@ def find_dataset_using_name(dataset_name):
     and it is case-insensitive.
     """
     dataset_filename = "data." + dataset_name + "_dataset"
+    print(dataset_filename)
     datasetlib = importlib.import_module(dataset_filename)
 
     dataset = None
@@ -62,18 +63,21 @@ def create_dataset(opt):
     dataset = data_loader.load_data()
     return dataset
 
-#
-# ################# read in images with mask channel
+
+################# read in images with mask channel
 # class MaskDataSet(torch.utils.data.Dataset):
 #     def __init__(self, images_file):
 #         self.images = np.load(images_file)
-#
+#         self.images_file = images_file
+#         print(self.images.shape)
+
 #     def __len__(self):
 #         return len(self.images)
-#
+
 #     def __getitem__(self, idx):
 #         img = torch.from_numpy(self.images[idx])
-#         return img
+#         print(img.shape)
+#         return {'A':img, 'A_paths':self.images_file}
 
 
 class CustomDatasetDataLoader():
@@ -88,7 +92,7 @@ class CustomDatasetDataLoader():
         self.opt = opt
         dataset_class = find_dataset_using_name(opt.dataset_mode)
         self.dataset = dataset_class(opt)
-        # self.dataset = MaskDataSet(opt.images_file)   # usful if reading from a single file
+#         self.dataset = MaskDataSet(opt.images_file)   # usful if reading from a single file
         print("dataset [%s] was created" % type(self.dataset).__name__)
         self.dataloader = torch.utils.data.DataLoader(
             self.dataset,
@@ -105,6 +109,7 @@ class CustomDatasetDataLoader():
 
     def __iter__(self):
         """Return a batch of data"""
+        print(self.dataloader)
         for i, data in enumerate(self.dataloader):
             if i * self.opt.batch_size >= self.opt.max_dataset_size:
                 break

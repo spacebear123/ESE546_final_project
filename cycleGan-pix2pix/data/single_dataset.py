@@ -1,7 +1,7 @@
 from data.base_dataset import BaseDataset, get_transform
 from data.image_folder import make_dataset
 from PIL import Image
-
+import numpy as np
 
 class SingleDataset(BaseDataset):
     """This dataset class can load a set of images specified by the path --dataroot /path/to/data.
@@ -21,6 +21,7 @@ class SingleDataset(BaseDataset):
         self.transform = get_transform(opt, grayscale=(input_nc == 1))
 
     def __getitem__(self, index):
+        print("single")
         """Return a data point and its metadata information.
 
         Parameters:
