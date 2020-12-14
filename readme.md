@@ -21,6 +21,7 @@ then run
 place the freshly generated pictures(You need to convert them to .JPG) from Mask RCNN into cycleGan-pix2pix/datasets/horse2zebra/testA (You can delete the predownloaded pictures if you want to)
 
 Then, run 
+```cd cycleGan-pix2pix```
 
 ```python test.py --dataroot datasets/horse2zebra/testA --name horse2zebra_pretrained --model test --no_dropout```
 
